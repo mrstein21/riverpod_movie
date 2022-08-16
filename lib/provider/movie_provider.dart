@@ -37,14 +37,14 @@ class MovieProvider{
   }
 
   Future<MovieRes> getTopRatedMovie(int page) async {
-    final response = await _dio.get(
-      '/movie/top_rated',
-      queryParameters: {
-        'page':'$page',
-        'api_key':kApiKey
-      },
-    );
     try {
+        final response = await _dio.get(
+        '/movie/top_rated',
+        queryParameters: {
+          'page':'$page',
+          'api_key':kApiKey
+        },
+      );
       return MovieRes.fromJson(response.data);
     } catch (e, s) {
       logger.e('getMoviePopular', e, s);

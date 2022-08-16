@@ -7,7 +7,7 @@ import 'package:movie_trial/mixins/style/text.dart';
 import 'package:movie_trial/model/movie.dart';
 
 class MovieView extends StatelessWidget {
-  late Movie movie;
+  final Movie movie;
   MovieView({
     required this.movie
   });
